@@ -112,10 +112,6 @@ a {
   border-bottom-left-radius: var(--rem-40);
 }
 
-header {
-  position: relative;
-}
-
 .mobile-nav {
   display: none;
   box-shadow: 0px 30px 80px 0px rgba(47, 65, 88, 0.2);
@@ -486,6 +482,10 @@ html {
   align-items: center;
   gap: var(--rem-50);
   padding: var(--rem-50) 0;
+}
+
+a:first-child .case-study {
+  padding-top: 0;
 }
 
 .case-study span {
