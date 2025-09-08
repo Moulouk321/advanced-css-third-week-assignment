@@ -338,22 +338,21 @@ html {
   grid-template-rows: subgrid;
   grid-row: span 2;
 }
-.right-side .images .relative {
+.right-side .images {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
-.right-side .images div:first-child img {
-  border-radius: 50% 50% 0 0;
+.right-side .images .relative:first-child {
   grid-column: 3 / 5;
-  width: 100%;
-  min-width: 200px;
 }
 
-.right-side .images div:last-child img {
-  border-radius: 0 0 50% 50%;
-  grid-column: 1 / 3;
+.right-side .images .relative:first-child img,
+.right-side .images .relative:last-child img {
   width: 100%;
-  min-width: 200px;
+}
+
+.right-side .images .relative:last-child {
+  grid-column: 1 / 3;
 }
 .first-quote {
   background-color: #7d6353;
@@ -362,9 +361,10 @@ html {
   border-radius: 35px 35px 0 35px;
   padding: var(--rem-20);
   position: absolute;
-  max-width: 216px;
-  left: 32%;
-  bottom: 37%;
+  right: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 .second-quote,
@@ -374,8 +374,11 @@ html {
 
 .quotes {
   position: absolute;
-  left: 42%;
-  top: 20%;
+  left: 85%;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 70%;
+  z-index: 1;
 }
 
 .second-quote {
@@ -397,6 +400,25 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: max-content;
+}
+
+.right-side .images .relative:first-child .masked {
+  -webkit-mask-image: url(assets/images/mask-top.svg);
+  mask-image: url(assets/images/mask-top.svg);
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  mask-position: center;
+}
+.right-side .images .relative:last-child .masked {
+  -webkit-mask-image: url(assets/images/mask-bottom.svg);
+  mask-image: url(assets/images/mask-bottom.svg);
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  mask-position: center;
+}
+.masked img {
+  vertical-align: middle;
 }
 
 .third-section {
@@ -565,10 +587,6 @@ a:first-child .case-study {
     font-size: var(--rem-20);
   }
 
-  .first-quote {
-    max-width: 180px;
-  }
-
   .third-section .image-container img {
     max-width: 270px;
   }
@@ -607,10 +625,10 @@ a:first-child .case-study {
     margin-inline: var(--rem-40);
   }
 
-  .right-part div,
+  /* .right-part div,
   .right-side .images div {
     display: block;
-  }
+  } */
 
   .content-container h1,
   .second-section .text-container h2,
@@ -660,10 +678,6 @@ a:first-child .case-study {
   .case-studies .text-container p {
     width: 100%;
   }
-  .first-quote {
-    bottom: 16%;
-  }
-
   .case-study .info h3 {
     font-variant: var(--rem-20);
   }
