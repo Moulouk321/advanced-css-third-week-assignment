@@ -43,19 +43,21 @@
   background: var(--purple);
   padding: var(--rem-50);
   max-width: 400px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
-  gap: var(--rem-20);
+  gap: var(--rem-12);
   position: fixed;
   height: 100%;
-  z-index: 1;
+  z-index: 11;
   right: 0;
-  top: 45px;
+  top: var(--rem-70);
+  /* max-width: 700px; */
 }
 
 .skip-link {
+  all: unset;
   color: var(--white);
   font-size: var(--rem-14);
   position: absolute;
@@ -65,9 +67,11 @@
 
 .skip-link:focus {
   right: 50%;
+  transform: translate(50%, -50%);
+  box-shadow: 0 0 0 2px var(--white);
 }
 
-.contrast-tool-btn {
+.accessibility button {
   background-color: var(--white);
   border: none;
   color: var(--black);
@@ -75,8 +79,41 @@
   border-radius: var(--rem-10);
   font-size: var(--rem-14);
   cursor: pointer;
+  min-height: 170px;
 }
 
 .high-contrast {
   filter: contrast(1.4);
+}
+
+.hide-images img:not(.logo-container img) {
+  visibility: hidden;
+  position: relative;
+}
+
+.high-saturation {
+  filter: saturate(1.5);
+}
+
+.highlight-links a,
+.highlight-links button {
+  outline: 2px solid var(--purple);
+  outline-offset: 2px;
+}
+
+.highlight-titles h1,
+.highlight-titles h2,
+.highlight-titles h3,
+.highlight-titles h4 {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.dark-mode {
+  background-color: var(--black);
+  color: var(--white);
 }
