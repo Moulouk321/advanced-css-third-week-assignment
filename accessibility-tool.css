@@ -1,0 +1,82 @@
+:root {
+  --black: #121212;
+  --dark-green: #21383e;
+  --brown: #553c16;
+  --light-brown: #f5f2ec;
+  --gray: #7d8186;
+  --white: #fff;
+  --purple: #725ba1;
+  --light-purple: #726985;
+  --green: #43b671;
+  --dark-gray: #404852;
+
+  /* Font sizes (rem scale) */
+  --rem-4: 0.25rem; /* 4px */
+  --rem-5: 0.3125rem; /* 5px */
+  --rem-8: 0.5rem; /* 8px */
+  --rem-10: 0.625rem; /* 10px */
+  --rem-12: 0.75rem; /* 12px */
+  --rem-13: 0.8125rem; /* 13px */
+  --rem-14: 0.875rem; /* 14px */
+  --rem-16: 1rem; /* 16px */
+  --rem-20: 1.25rem; /* 20px */
+  --rem-23: 1.4375rem; /* 23px */
+  --rem-25: 1.5625rem; /* 25px */
+  --rem-28: 1.75rem; /* 28px */
+  --rem-30: 1.875rem; /* 30px */
+  --rem-34: 2.125rem; /* 34px */
+  --rem-40: 2.5rem; /* 40px */
+  --rem-42: 2.625rem; /* 42px */
+  --rem-50: 3.125rem; /* 50px */
+  --rem-60: 3.75rem; /* 60px */
+  --rem-70: 4.375rem; /* 70px */
+  --rem-80: 5rem; /* 80px */
+  --rem-90: 5.625rem; /* 90px */
+  --rem-100: 6.25rem; /* 100px */
+  --rem-120: 7.5rem; /* 120px */
+  --rem-130: 8.125rem; /* 130px */
+  --rem-150: 9.375rem; /* 150px */
+  --rem-200: 12.5rem; /* 200px */
+}
+
+.accessibility {
+  background: var(--purple);
+  padding: var(--rem-50);
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--rem-20);
+  position: fixed;
+  height: 100%;
+  z-index: 1;
+  right: 0;
+  top: 45px;
+}
+
+.skip-link {
+  color: var(--white);
+  font-size: var(--rem-14);
+  position: absolute;
+  top: 35%;
+  right: -100%;
+}
+
+.skip-link:focus {
+  right: 50%;
+}
+
+.contrast-tool-btn {
+  background-color: var(--white);
+  border: none;
+  color: var(--black);
+  padding: var(--rem-20) var(--rem-50);
+  border-radius: var(--rem-10);
+  font-size: var(--rem-14);
+  cursor: pointer;
+}
+
+.high-contrast {
+  filter: contrast(1.4);
+}

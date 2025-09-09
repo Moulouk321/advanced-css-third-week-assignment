@@ -41,10 +41,21 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="stylesheet/fonts.css" />
     <link rel="stylesheet" href="widget.css" />
+    <link rel="stylesheet" href="accessibility-tool.css" />
   </head>
   <body>
     <script src="script.js"></script>
     <span class="screen-widget"></span>
+    <section class="accessibility">
+      <a href="#main-content" class="skip-link">Skip to main content</a>
+      <button
+        id="contrast-toggle"
+        class="contrast-tool-btn"
+        aria-pressed="false"
+      >
+        Toggle Contrast
+      </button>
+    </section>
     <header>
       <nav>
         <a class="logo-container" href="#">
@@ -83,7 +94,7 @@
       </nav>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="hero-section">
         <div class="left-part">
           <div class="content-container">
