@@ -39,47 +39,107 @@
   --rem-200: 12.5rem; /* 200px */
 }
 
+.dark-mode {
+  --dark-green: #ffff;
+  --dark-gray: #ffff;
+}
+
 .accessibility {
-  background: var(--purple);
+  background: rgb(255, 255, 255, 0.9);
   padding: var(--rem-50);
-  max-width: 400px;
+  /* max-width: 400px; */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
   gap: var(--rem-12);
   position: fixed;
-  height: 100%;
-  z-index: 11;
-  right: 0;
-  top: var(--rem-70);
+  height: 90%;
+  z-index: 1000;
+  right: -100%;
+  top: 50%;
   /* max-width: 700px; */
+  border-radius: var(--rem-20);
+  transition: all 0.3s ease;
+  transform: translate(0, -50%);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border: 1px solid var(--purple);
+  visibility: hidden;
+}
+
+.dark-mode .accessibility {
+  /* background: rgb(255, 255, 255, 0.9); */
+  border: 1px solid black;
 }
 
 .skip-link {
   all: unset;
   color: var(--white);
   font-size: var(--rem-14);
-  position: absolute;
-  top: 35%;
-  right: -100%;
+  position: fixed;
+  top: 50%;
+  left: -100%;
+  background-color: var(--purple);
+  padding: var(--rem-10) var(--rem-20);
+  border-radius: var(--rem-10);
+  z-index: 1000;
 }
 
 .skip-link:focus {
-  right: 50%;
-  transform: translate(50%, -50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   box-shadow: 0 0 0 2px var(--white);
 }
 
-.accessibility button {
-  background-color: var(--white);
-  border: none;
+.v-visible {
+  visibility: visible;
+  right: 0;
+}
+
+.accessibility span {
+  font-size: var(--rem-30);
+  color: var(--dark-gray);
+  position: absolute;
+  top: var(--rem-20);
+  right: var(--rem-20);
+  cursor: pointer;
+}
+
+.dark-mode .accessibility span {
   color: var(--black);
+}
+
+.accessibility-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.accessibility-btn img {
+  width: var(--rem-50);
+  height: var(--rem-50);
+}
+
+.accessibility button {
+  background-color: var(--purple);
+  border: none;
+  color: var(--white);
   padding: var(--rem-20) var(--rem-50);
   border-radius: var(--rem-10);
   font-size: var(--rem-14);
   cursor: pointer;
-  min-height: 170px;
+  /* min-height: 150px; */
+}
+
+.dark-mode .accessibility button {
+  background-color: var(--black);
+  color: var(--white);
+  border: 2px solid var(--white);
 }
 
 .high-contrast {
@@ -116,4 +176,12 @@
 .dark-mode {
   background-color: var(--black);
   color: var(--white);
+}
+
+.dark-mode .pattern {
+  background-image: radial-gradient(var(--white) 12%, var(--black) 13%);
+}
+
+.dark-mode .video-call {
+  background-color: #21383e;
 }

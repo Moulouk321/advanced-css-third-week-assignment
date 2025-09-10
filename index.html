@@ -46,8 +46,16 @@
   <body>
     <script src="script.js"></script>
     <span class="screen-widget"></span>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <button
+      class="accessibility-btn"
+      id="accessibility-btn"
+      aria-pressed="false"
+    >
+      <img src="assets/icons/accessibility.png" alt="Accessibility Icon" />
+    </button>
     <section class="accessibility">
-      <a href="#main-content" class="skip-link">Skip to main content</a>
+      <span id="close-accessibility">x</span>
       <button
         id="contrast-toggle"
         class="contrast-tool-btn"
@@ -91,7 +99,7 @@
         Align Center
       </button>
       <button id="dark-mode-toggle" class="dark-mode-btn" aria-pressed="false">
-        Dark Mode
+        Dark Contrast
       </button>
     </section>
     <header>

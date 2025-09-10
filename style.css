@@ -90,6 +90,7 @@ nav {
 .logo-container .logo-text {
   font-weight: bold;
   font-size: var(--rem-14);
+  color: var(--black);
 }
 
 nav ul {
@@ -106,6 +107,7 @@ nav ul li {
 nav ul li a {
   position: relative;
   display: inline-block;
+  color: var(--black);
 }
 
 nav ul li a::after {
@@ -412,7 +414,7 @@ html {
 .signature h5,
 .video-info h5 {
   font-size: var(--rem-12);
-  color: #2c3a4b;
+  color: var(--dark-gray);
   font-weight: normal;
 }
 .relative {

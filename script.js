@@ -16,6 +16,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ACCESSIBILITY CODE
 
+  //TOGGLE VISIBILITY OF THE ACCESSIBILITY TOOL
+  const AccessibilityToggle = document.getElementById("accessibility-btn");
+  const accessibilityBtn = document.querySelector(".accessibility-btn");
+  const accessibilityTool = document.querySelector(".accessibility");
+  accessibilityBtn.addEventListener("click", () => {
+    accessibilityTool.classList.toggle("v-visible");
+    const isPressed =
+      AccessibilityToggle.getAttribute("aria-pressed") === "true";
+    AccessibilityToggle.setAttribute("aria-pressed", String(!isPressed));
+  });
+
+  //Close accessibility tool
+  const closeAccessibility = document.getElementById("close-accessibility");
+  closeAccessibility.addEventListener("click", () => {
+    accessibilityTool.classList.remove("v-visible");
+    const isPressed =
+      AccessibilityToggle.getAttribute("aria-pressed") === "true";
+    AccessibilityToggle.setAttribute("aria-pressed", String(!isPressed));
+  });
+
   //TOGGLE CONTRAST
   const contrastToggle = document.getElementById("contrast-toggle");
 
