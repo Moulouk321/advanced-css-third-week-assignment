@@ -168,7 +168,8 @@ a {
   transition: all 0.3s ease;
 }
 
-.btns-container button:first-child:focus::after {
+.btns-container button:first-child:focus::after,
+.btns-container button:first-child:hover::after {
   width: 100%;
   left: 0;
 }
@@ -631,6 +632,22 @@ a:first-child .case-study {
 
 .case-studies a:not(:last-child) .case-study {
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.case-study .arrow::after {
+  content: "";
+  display: inline-block;
+  background-image: url(assets/icons/arrow.svg);
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  font-size: var(--rem-30);
+  color: var(--purple);
+  transition: all 0.3s ease;
+}
+
+.dark-mode .case-study .arrow::after {
+  background-image: url(assets/icons/white-arrow.svg);
 }
 
 @media (max-width: 1280px) {

@@ -36,6 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
     AccessibilityToggle.setAttribute("aria-pressed", String(!isPressed));
   });
 
+  document.addEventListener("click", (e) => {
+    if (accessibilityTool.classList.contains("v-visible")) {
+      if (!accessibilityTool.contains(e.target) && !AccessibilityToggle.contains(e.target)) {
+        accessibilityTool.classList.remove("v-visible");
+      }
+    }
+  });
+
   //TOGGLE CONTRAST
   const contrastToggle = document.getElementById("contrast-toggle");
 
